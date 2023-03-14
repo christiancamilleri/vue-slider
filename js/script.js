@@ -30,6 +30,7 @@ createApp({
             ],
 
             actualIndex: 0,
+            
         }
     },
     methods: {
@@ -50,7 +51,12 @@ createApp({
         changeImg(index) {
               this.actualIndex = index
         },
+    
+    },
+    mounted() {
+        setInterval(this.nextSlide, 3000);
     }
+    
 
 }).mount('#app')
 
