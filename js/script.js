@@ -30,6 +30,7 @@ createApp({
             ],
 
             actualIndex: 0,
+            autoplay: setInterval(this.nextSlide, 3000)
             
         }
     },
@@ -51,10 +52,15 @@ createApp({
         changeImg(index) {
               this.actualIndex = index
         },
-    
+        autoplayOn () {
+            setInterval(this.nextSlide, 3000);
+        },
+        autoplayStop() {
+            clearInterval(this.autoplay)
+        }
     },
     mounted() {
-        setInterval(this.nextSlide, 3000);
+        this.autoplay
     }
     
 

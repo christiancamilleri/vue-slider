@@ -32,7 +32,7 @@
                     </div>
                 </div>
 
-                <div class="thumbs">
+                <div  @mouseover="autoplayStop()" @mouseleave="autoplayOn()" class="thumbs">
                     <div @click="prevSlide()" class="prev"></div>
                     <div @click="nextSlide()" class="next"></div>
                     <div @click="changeImg(index)" v-for="(thumbnails, index) in slides" :class=" actualIndex == index ? `active` : `` " class="thumb">
