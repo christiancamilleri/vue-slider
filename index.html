@@ -14,10 +14,9 @@
     
     <div id="app">
         
-    
 
         <div class="container">
-            <div class="slider-wrapper" tabindex="0">
+            <div @mouseover="autoplayStop()" @mouseleave="autoplayOn()" class="slider-wrapper" tabindex="0">
 
                 <div class="item">
                     <img :src="slides[actualIndex].image" alt="Spiderman" />
@@ -32,7 +31,7 @@
                     </div>
                 </div>
 
-                <div  @mouseover="autoplayStop()" @mouseleave="autoplayOn()" class="thumbs">
+                <div class="thumbs">
                     <div @click="prevSlide()" class="prev"></div>
                     <div @click="nextSlide()" class="next"></div>
                     <div @click="changeImg(index)" v-for="(thumbnails, index) in slides" :class=" actualIndex == index ? `active` : `` " class="thumb">
